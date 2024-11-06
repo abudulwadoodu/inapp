@@ -1,3 +1,5 @@
+import "./Component2.css";
+
 export default function Component2() {
-    return "<p>World</p>";
+    return <h1 className="component2">World</h1>;
 }
