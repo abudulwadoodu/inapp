@@ -1,11 +1,7 @@
-import Component1 from "./Component1";
-import Component2 from "./Component2";
+import { MovieList } from "./Component3";
 
-export default function App() {
+export function App() {
   return (
-  <>
-    <Component1 />
-    <Component2 />
-  </>
+    <MovieList/>
   )
 }

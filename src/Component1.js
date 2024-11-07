@@ -2,27 +2,27 @@ import "./Component1.css";
 
 export default function Component1() {
     
-    let title = "Hello";
-    let sampleData = [
+    let title = "Todo List";
+    let TodoList = [
         {
             "id": 1,
-            "name": "Name 1"
+            "name": "Task 1"
         },
         {
             "id": 2,
-            "name": "Name 2"
+            "name": "Task 2"
         },
         {
             "id": 3,
-            "name": "Name 3"
+            "name": "Task 3"
         },
         {
             "id": 4,
-            "name": "Name 4"
+            "name": "Task 4"
         },
         {
             "id": 5,
-            "name": "Name 5"
+            "name": "Task 5"
         }
     ];
 
@@ -31,7 +31,7 @@ export default function Component1() {
     }
 
     function getData() {
-        return sampleData.map((data) => {
+        return TodoList.map((data) => {
             return <div key={data.id}>
                 <span>{data.id}</span>,&nbsp;
                 <span>{data.name}</span>
