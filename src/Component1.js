@@ -1,6 +1,6 @@
 import "./Component1.css";
 
-export default function Component1() {
+export function Component1() {
     
     let title = "Todo List";
     let TodoList = [
@@ -33,16 +33,16 @@ export default function Component1() {
     function getData() {
         return TodoList.map((data) => {
             return <div key={data.id}>
-                <span>{data.id}</span>,&nbsp;
+                <span>{data.id}</span>.&nbsp;
                 <span>{data.name}</span>
             </div>
         });
     }
 
     return (
-        <>
-            <h1 className="component1">{getTitle()}</h1>
+        <div className="component1">
+            <h1>{getTitle()}</h1>
             <div>{getData()}</div>
-        </>
+        </div>
     );
 }
