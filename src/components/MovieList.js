@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getPopularMovies } from "./movie.service";
 import './movieList.css';
 
-export function MovieList() {
+export default function MovieList() {
     
     const [ movieLists, setMovieLists ] = useState();
 
