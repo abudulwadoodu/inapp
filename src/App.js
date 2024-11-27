@@ -1,12 +1,15 @@
-import { Component1 } from "./Component1";
-import { Component2 } from "./Component2";
-import "./App.css";
+import LoadingComponent from "./components/LoadingComponent";
+import { lazy, Suspense } from "react";
+const MovieList = lazy(() => import("./components/MovieList"));
+const FormComponent = lazy(() => import("./components/FormComponent"));
 
 export function App() {
   return (
     <div className="app-container">
-            <Component1 />
-            <Component2 />
-        </div>
+      <Suspense fallback={<LoadingComponent/>}>
+        <FormComponent />
+        <MovieList />
+      </Suspense>
+    </div>
   )
 }
