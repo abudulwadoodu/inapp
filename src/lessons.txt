@@ -1,0 +1,8 @@
+Hooks
+ - reusable functions
+
+SPA
+ - has single entry point
+
+Link
+ - unlike anchor tag, this wont cause page reload
