@@ -1,48 +1,35 @@
-import "./Component1.css";
+import React from "react";
 
-export function Component1() {
-    
-    let title = "Todo List";
-    let TodoList = [
-        {
-            "id": 1,
-            "name": "Task 1"
-        },
-        {
-            "id": 2,
-            "name": "Task 2"
-        },
-        {
-            "id": 3,
-            "name": "Task 3"
-        },
-        {
-            "id": 4,
-            "name": "Task 4"
-        },
-        {
-            "id": 5,
-            "name": "Task 5"
+const Todo = ({ todoList, addTodo, removeTodo, editTodo }) => {
+    const handleAddTodo = () => {
+        const name = prompt("Enter TODO name:");
+        if (name) {
+            addTodo(name);
         }
-    ];
+    };
 
-    function getTitle() {
-        return <div>{title}</div>
-    }
-
-    function getData() {
-        return TodoList.map((data) => {
-            return <div key={data.id}>
-                <span>{data.id}</span>.&nbsp;
-                <span>{data.name}</span>
-            </div>
-        });
-    }
+    const handleEditTodo = (id, currentName) => {
+        const newName = prompt("Update Task:", currentName);
+        if (newName) {
+            editTodo(id, newName);
+        }
+    };
 
     return (
         <div className="component1">
-            <h1>{getTitle()}</h1>
-            <div>{getData()}</div>
+            <h1>Todo List</h1>
+            <ul>
+                {todoList.map(todo => (
+                    <li key={todo.id}>
+                        {todo.name}
+                        <button onClick={() => handleEditTodo(todo.id, todo.name)}>Edit</button>
+                        <button onClick={() => removeTodo(todo.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+            <button onClick={handleAddTodo}>Add Task</button>
         </div>
     );
-}
+};
+
+export default Todo;
